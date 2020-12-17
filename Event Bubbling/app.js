@@ -13,12 +13,13 @@ function addItem(event) {
   const newItem = document.createElement("li");
   //adding a class to new item
   newItem.classList.add("item");
-  //adding the text and counter to item list using the text submitted in the input
+  //adding the text to item list using the text submitted in the input
   newItem.innerText = nameInput.value;
   //appending the new item to the DOM
   list.appendChild(newItem);
+  //updating the number of items
   todoNum.innerText = items.length;
-
+  //deletes item when clicked
   newItem.addEventListener("click", deleteItem);
 }
 
