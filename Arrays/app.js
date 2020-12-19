@@ -14,11 +14,11 @@ const games = [
 ];
 
 //MAP
-const newVideos = videos.map(function (video) {
-  return video.length < 10 ? video : "NO";
-});
+// const newVideos = videos.map(function (video) {
+//   return video.length < 10 ? video : "NO";
+// });
 
-console.log(newVideos);
+// console.log(newVideos);
 
 //FIND
 // const searchGnar = videos.find(function (video) {
@@ -50,3 +50,44 @@ console.log(newVideos);
 // });
 
 // console.log(someRating);
+
+//ARROW function
+//old way
+// const newVideos = videos.map(function (video) {
+//   return video.length < 10 ? video : "NO";
+// });
+
+//new way
+// const arrowVideos = videos.map((video) => video + " all day");
+
+// console.log(arrowVideos);
+
+//SORT
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// fruits.sort();
+
+// console.log(fruits);
+
+// return negative a is sorted before b
+// positive b is sorted before a
+// if they are the same nothing changes
+const ratings = [90, 55, 67, 88, 80];
+// ratings.sort((a, b) => a - b);
+
+// console.log(ratings);
+
+// const descRating = [...ratings];
+// descRating.sort((a, b) => b - a);
+
+// console.log(descRating);
+
+//CONCAT
+const names = ["joshua", "ed"];
+
+const otherNames = ["bob", "claire"];
+
+// const allNames = names.concat(otherNames);
+const allNames = [...names, ...otherNames];
+
+console.log(names);
+console.log(allNames);
