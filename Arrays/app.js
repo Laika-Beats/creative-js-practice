@@ -14,9 +14,11 @@ const games = [
 ];
 
 //MAP
-// const newVideos = videos.map(function (video) {
-//   return video.toUpperCase();
-// });
+const newVideos = videos.map(function (video) {
+  return video.length < 10 ? video : "NO";
+});
+
+console.log(newVideos);
 
 //FIND
 // const searchGnar = videos.find(function (video) {
@@ -34,3 +36,17 @@ const games = [
 // });
 
 // console.log(lowRating);
+
+//SOME AND EVERY
+//check to see if every game has a rating greater than 8 and returns as boolean
+// const checkRating = games.every(function (game) {
+//   return game.Rating > 8;
+// });
+
+// console.log(checkRating);
+
+// const someRating = games.some(function (game) {
+//   return game.Rating > 8;
+// });
+
+// console.log(someRating);
