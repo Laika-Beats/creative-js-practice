@@ -74,33 +74,66 @@
 
 // newDragon.attack();
 
-class Enemy {
-  constructor(life, name, level) {
-    this.life = life;
-    this.name = name;
-    this.level = level;
+// class Enemy {
+//   constructor(life, name, level) {
+//     this.life = life;
+//     this.name = name;
+//     this.level = level;
+//   }
+// }
+
+// Enemy.prototype.getInfo = function () {
+//   console.log(this.life, this.name, this.level);
+// };
+
+// const turtle = new Enemy(25, "Squidlebuggl", 5);
+// const bug = new Enemy(25, "Buggy", 2);
+// console.log(turtle);
+
+// class Bug extends Enemy {
+//   constructor(life, name, level, legs, dmg) {
+//     super(life, name, level);
+
+//     this.legs = legs;
+//     this.dmg = dmg;
+//   }
+// }
+
+// const john = new Bug(100, "John", 1, 6, 10);
+// console.log(john);
+
+// turtle.getInfo();
+// bug.getInfo();
+
+class Animator {
+  constructor(selector) {
+    this.selector = document.querySelector(selector);
+  }
+  fadeOut(time, toggle = false) {
+    if (toggle && this.selector.classList.contains("fadeOut-active")) {
+      this.selector.style.opacity = 1;
+      this.selector.classList.remove("fadeOut-active");
+    } else {
+      this.selector.style.transition = `all ${time}s ease`;
+      this.selector.style.opacity = 0;
+      this.selector.classList.add("fadeOut-active");
+    }
+  }
+  move(time, toggle = false, { x = 0, y = 0 }) {
+    if (toggle && this.selector.classList.contains("move-active")) {
+      this.selector.style.transform = "translate(0px, 0px";
+      this.selector.classList.remove("move-active");
+    } else {
+      this.selector.style.transition = `all ${time}s ease`;
+      this.selector.style.transform = `translate(${x}px, ${y}px)`;
+      this.selector.classList.add("move-active");
+    }
   }
 }
 
-Enemy.prototype.getInfo = function () {
-  console.log(this.life, this.name, this.level);
-};
+const intro = new Animator("h1");
+const button = document.querySelector("button");
 
-const turtle = new Enemy(25, "Squidlebuggl", 5);
-const bug = new Enemy(25, "Buggy", 2);
-console.log(turtle);
+button.addEventListener("click", () => intro.move(1, true, { x: 100, y: 200 }));
 
-class Bug extends Enemy {
-  constructor(life, name, level, legs, dmg) {
-    super(life, name, level);
-
-    this.legs = legs;
-    this.dmg = dmg;
-  }
-}
-
-const john = new Bug(100, "John", 1, 6, 10);
-console.log(john);
-
-turtle.getInfo();
-bug.getInfo();
+// intro.fadeOut(4);
