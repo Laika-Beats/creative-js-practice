@@ -15,17 +15,34 @@
 
 // user.greet();
 
-const person = {
-  firstName: "Joshua",
-  lastName: "Thompson",
-  getName() {
-    console.log(this.firstName + " " + this.lastName);
-  },
-};
+// const person = {
+//   firstName: "Joshua",
+//   lastName: "Thompson",
+//   getName() {
+//     console.log(this.firstName + " " + this.lastName);
+//   },
+// };
 
-function registerUser() {
-  this.getName();
+// function registerUser() {
+//   this.getName();
+// }
+
+// const register = registerUser.bind(person);
+// register();
+
+// Constructor function
+
+function Todo(name, completed) {
+  this.name = name;
+  this.completed = completed;
 }
 
-const register = registerUser.bind(person);
-register();
+Todo.prototype.getTodoName = function () {
+  console.log(this.name);
+};
+
+const todo = new Todo("Buy Eggs", false);
+
+todo.getTodoName();
+
+// console.log(todo);
