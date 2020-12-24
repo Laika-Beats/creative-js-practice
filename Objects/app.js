@@ -30,7 +30,7 @@
 // const register = registerUser.bind(person);
 // register();
 
-// Constructor function
+//Constructor function
 
 // function Todo(name, completed) {
 //   this.name = name;
