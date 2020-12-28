@@ -164,3 +164,34 @@
 
 // console.log(todo);
 // console.log(todo2);
+
+function Enemy(life, name, level) {
+  this.life = life;
+  this.name = name;
+  this.level = level;
+}
+
+Enemy.prototype.getInfo = function () {
+  console.log(this.life, this.name, this.level);
+};
+Enemy.prototype.attack = function () {
+  console.log(`${this.name} has attacked!`);
+};
+Enemy.prototype.getLife = function () {
+  console.log(`${this.name} has ${this.life} life left.`);
+};
+
+function Tiger(life, name, level, spell) {
+  // keyword this is going to reference the Tiger object
+  Enemy.call(this, life, name, level);
+  this.spell = spell;
+}
+
+Tiger.prototype = Object.create(Enemy.prototype);
+
+const newTiger = new Tiger(100, "Spike", 20, "Bite");
+
+console.log(newTiger);
+
+newTiger.getLife();
+newTiger.getInfo();
