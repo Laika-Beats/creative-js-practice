@@ -149,3 +149,18 @@
 // };
 
 // user.displayGames();
+
+// function Todo(name, completed) {
+//   this.name = name;
+//   this.completed = completed;
+// }
+
+// Todo.prototype.getTodoName = function () {
+//   console.log(this.name);
+// };
+
+// const todo = new Todo("YO YO YO", false);
+// const todo2 = new Todo("YO YO OOOO", true);
+
+// console.log(todo);
+// console.log(todo2);
