@@ -32,6 +32,20 @@
 
 // IFFE
 
-(function hello() {
-  console.log("How are you?");
-})();
+// (function hello() {
+//   console.log("How are you?");
+// })();
+
+// CLOSURES
+
+function user() {
+  const name = "Joshua";
+  const displayName = function (greeting) {
+    console.log(greeting + name);
+  };
+  return displayName;
+}
+
+const say = user();
+
+say("How are you ");
