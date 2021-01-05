@@ -38,14 +38,29 @@
 
 // CLOSURES
 
-function user() {
-  const name = "Joshua";
-  const displayName = function (greeting) {
-    console.log(greeting + name);
-  };
-  return displayName;
-}
+// function user() {
+//   const name = "Joshua";
+//   const displayName = function (greeting) {
+//     console.log(greeting + name);
+//   };
+//   return displayName;
+// }
 
-const say = user();
+// const say = user();
 
-say("How are you ");
+// say("How are you ");
+
+let userWord = "poop";
+let splitWord = userWord.split("");
+let reverse = splitWord.reverse();
+let joinWord = reverse.join("");
+
+console.log(joinWord);
+
+(function isPalidrome() {
+  if (joinWord === userWord) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
+})();
