@@ -1,20 +1,34 @@
-function otherFunct() {
-  console.log("We are in another function");
-  console.log("do some stuff");
-}
+// function otherFunct() {
+//   console.log("We are in another function");
+//   console.log("do some stuff");
+// }
+
+// console.log("start");
+
+// setTimeout(() => {
+//   console.log("We are in the timeout");
+// }, 2000);
+
+// otherFunct();
+
+// console.log("end");
+
+// const items = [1, 2, 3, 4, 5];
+
+// items.forEach((item) => {
+//   console.log("item #: " + item);
+// });
 
 console.log("start");
 
-setTimeout(() => {
-  console.log("We are in the timeout");
-}, 2000);
+function loginUser(email, password, callback) {
+  setTimeout(() => {
+    callback({ userEmail: email });
+  }, 1500);
+}
 
-otherFunct();
-
-console.log("end");
-
-const items = [1, 2, 3, 4, 5];
-
-items.forEach((item) => {
-  console.log("item #: " + item);
+const user = loginUser("josh@gmail.com", "123456", (user) => {
+  console.log(user);
 });
+
+console.log("finish");
