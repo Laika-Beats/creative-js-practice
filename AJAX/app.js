@@ -19,16 +19,29 @@
 //   console.log("item #: " + item);
 // });
 
-console.log("start");
+// console.log("start");
 
-function loginUser(email, password, callback) {
+// function loginUser(email, password, callback) {
+//   setTimeout(() => {
+//     callback({ userEmail: email });
+//   }, 1500);
+// }
+
+// const user = loginUser("josh@gmail.com", "123456", (user) => {
+//   console.log(user);
+// });
+
+// console.log("finish");
+
+const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    callback({ userEmail: email });
-  }, 1500);
-}
-
-const user = loginUser("josh@gmail.com", "123456", (user) => {
-  console.log(user);
+    console.log("got the data");
+    reject(new Error("User not logged in"));
+  }, 2000);
 });
 
-console.log("finish");
+promise
+  .then((user) => {
+    console.log(user);
+  })
+  .catch((error) => console.log(error));
