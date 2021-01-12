@@ -49,18 +49,30 @@
 //   })
 //   .catch((error) => console.log(error));
 
-const yt = new Promise((resolve) => {
-  setTimeout(() => {
-    console.log("Getting data from YouTube");
-    resolve({ videos: [1, 2, 3, 4, 5] });
-  }, 3000);
-});
+// const yt = new Promise((resolve) => {
+//   setTimeout(() => {
+//     console.log("Getting data from YouTube");
+//     resolve({ videos: [1, 2, 3, 4, 5] });
+//   }, 3000);
+// });
 
-const fb = new Promise((resolve) => {
-  setTimeout(() => {
-    console.log("Getting data from FaceBook");
-    resolve({ user: "Name" });
-  }, 3000);
-});
+// const fb = new Promise((resolve) => {
+//   setTimeout(() => {
+//     console.log("Getting data from FaceBook");
+//     resolve({ user: "Name" });
+//   }, 3000);
+// });
 
-Promise.all([yt, fb]).then((result) => console.log(result));
+// Promise.all([yt, fb]).then((result) => console.log(result));
+
+const button = document.querySelector("button");
+const header = document.querySelector("h1");
+
+button.addEventListener("click", () => {
+  fetch("https://api.adviceslip.com/advice")
+    .then((result) => result.json())
+    .then((data) => {
+      console.log(data.slip.advice);
+      header.innerText = data.slip.advice;
+    });
+});
