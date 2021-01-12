@@ -21,27 +21,30 @@
 
 // console.log("start");
 
-// function loginUser(email, password, callback) {
-//   setTimeout(() => {
-//     callback({ userEmail: email });
-//   }, 1500);
-// }
+function loginUser(email, password) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ userEmail: email });
+      console.log("Resolved the data");
+    }, 1500);
+  });
+}
 
-// const user = loginUser("josh@gmail.com", "123456", (user) => {
-//   console.log(user);
-// });
+const user = loginUser("josh@gmail.com", "123456", (user) => {
+  console.log(user);
+});
 
 // console.log("finish");
 
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log("got the data");
-    reject(new Error("User not logged in"));
-  }, 2000);
-});
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log("got the data");
+//     reject(new Error("User not logged in"));
+//   }, 2000);
+// });
 
-promise
-  .then((user) => {
-    console.log(user);
-  })
-  .catch((error) => console.log(error));
+// promise
+//   .then((user) => {
+//     console.log(user);
+//   })
+//   .catch((error) => console.log(error));
