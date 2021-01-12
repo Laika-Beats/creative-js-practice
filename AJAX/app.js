@@ -21,18 +21,18 @@
 
 // console.log("start");
 
-function loginUser(email, password) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({ userEmail: email });
-      console.log("Resolved the data");
-    }, 1500);
-  });
-}
+// function loginUser(email, password) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve({ userEmail: email });
+//       console.log("Resolved the data");
+//     }, 1500);
+//   });
+// }
 
-const user = loginUser("josh@gmail.com", "123456", (user) => {
-  console.log(user);
-});
+// const user = loginUser("josh@gmail.com", "123456", (user) => {
+//   console.log(user);
+// });
 
 // console.log("finish");
 
@@ -48,3 +48,19 @@ const user = loginUser("josh@gmail.com", "123456", (user) => {
 //     console.log(user);
 //   })
 //   .catch((error) => console.log(error));
+
+const yt = new Promise((resolve) => {
+  setTimeout(() => {
+    console.log("Getting data from YouTube");
+    resolve({ videos: [1, 2, 3, 4, 5] });
+  }, 3000);
+});
+
+const fb = new Promise((resolve) => {
+  setTimeout(() => {
+    console.log("Getting data from FaceBook");
+    resolve({ user: "Name" });
+  }, 3000);
+});
+
+Promise.all([yt, fb]).then((result) => console.log(result));
