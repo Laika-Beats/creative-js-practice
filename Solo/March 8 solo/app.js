@@ -24,7 +24,7 @@ function todoStorage(todo) {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
 
-  todos.push(todo);
+  todos.push({ todo: todo, completed: false });
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
