@@ -1,5 +1,4 @@
-const name = "Joshua";
-const greeting = "Hello";
-
-console.log(greeting + " " + name);
-console.log(`Hello ${name}`);
+function greet() {
+  let name = prompt("What is your name?");
+  console.log("Welcome to our website " + name);
+}
