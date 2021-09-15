@@ -25,16 +25,21 @@
 // console.log(inbox);
 
 // object
-const user = {
-  name: "Joshua",
-  age: 25,
-  married: true,
-  greet: function () {
-    console.log("Hello there!");
-  },
-};
+// const user = {
+//   name: "Joshua",
+//   age: 25,
+//   married: true,
+//   greet: function () {
+//     console.log("Hello there!");
+//   },
+// };
 
-// methods are fucntions that are inside objects
-user.greet();
+// // methods are fucntions that are inside objects
+// user.greet();
 
-console.log(user);
+// console.log(user);
+
+const listUsers = ["Joshua", "Claire", "Ed", "Dude Man"];
+listUsers.push("Bob");
+
+console.log(listUsers.indexOf("Joshua"));
