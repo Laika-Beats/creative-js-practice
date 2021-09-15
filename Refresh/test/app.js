@@ -12,14 +12,29 @@
 
 // signUp();
 
-function max(num1, num2) {
-  if (num1 > num2) {
-    return num1;
-  } else {
-    return num2;
-  }
-}
+// function max(num1, num2) {
+//   if (num1 > num2) {
+//     return num1;
+//   } else {
+//     return num2;
+//   }
+// }
 
-let inbox = max(300, 50);
+// let inbox = max(300, 50);
 
-console.log(inbox);
+// console.log(inbox);
+
+// object
+const user = {
+  name: "Joshua",
+  age: 25,
+  married: true,
+  greet: function () {
+    console.log("Hello there!");
+  },
+};
+
+// methods are fucntions that are inside objects
+user.greet();
+
+console.log(user);
