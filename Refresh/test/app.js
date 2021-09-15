@@ -39,7 +39,21 @@
 
 // console.log(user);
 
-const listUsers = ["Joshua", "Claire", "Ed", "Dude Man"];
-listUsers.push("Bob");
+// const listUsers = ["Joshua", "Claire", "Ed", "Dude Man"];
+// listUsers.push("Bob");
 
-console.log(listUsers.indexOf("Joshua"));
+// console.log(listUsers.indexOf("Joshua"));
+
+const text = "apple";
+
+switch (text) {
+  case "banana":
+    console.log("I love bananas");
+    break;
+  case "apple":
+    console.log("OH HELL NAW");
+    break;
+  default:
+    console.log("what fruit is that?");
+    break;
+}
