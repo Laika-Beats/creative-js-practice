@@ -11,3 +11,15 @@ submitButton.addEventListener("click", function (e) {
   list.appendChild(newItem);
   nameInput.value = " ";
 });
+
+const noteList = [
+  "feed the frog",
+  "do the soap dance",
+  "watch the monster bash",
+];
+
+localStorage.setItem("notes", JSON.stringify(noteList));
+
+const retrieved = JSON.parse(localStorage.getItem("notes"));
+
+console.log(retrieved);
