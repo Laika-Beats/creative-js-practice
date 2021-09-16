@@ -1,8 +1,11 @@
-const collectionItems = document.getElementsByClassName("item");
-const itemList = document.getElementById("items");
+const submitButton = document.getElementById("submit");
+const list = document.getElementById("items");
+const listItems = document.getElementsByClassName("item");
+console.log(listItems);
 
-const newItem = document.createElement("li");
-newItem.classList.add("item");
-newItem.innerText = "item 4";
-
-itemList.appendChild(newItem);
+submitButton.addEventListener("click", function () {
+  const newItem = document.createElement("li");
+  newItem.classList.add("item");
+  newItem.innerText = `item ${listItems.length + 1}`;
+  list.appendChild(newItem);
+});
