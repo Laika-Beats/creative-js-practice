@@ -18,8 +18,19 @@ const noteList = [
   "watch the monster bash",
 ];
 
-localStorage.setItem("notes", JSON.stringify(noteList));
+// localStorage.setItem("notes", JSON.stringify(noteList));
 
-const retrieved = JSON.parse(localStorage.getItem("notes"));
+// const retrieved = JSON.parse(localStorage.getItem("notes"));
+// for (let note of noteList) {
+//   console.log(note);
+// }
 
-console.log(retrieved);
+noteList.forEach(function (note, index) {
+  console.log(note, index + 1);
+});
+
+for (let note of noteList) {
+  if (note === noteList[0]) {
+    console.log("Yes");
+  }
+}
