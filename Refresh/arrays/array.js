@@ -1,5 +1,7 @@
-let bank = 420;
-let newBank = bank;
-newBank = 500;
+const videos = ["Music", "Comedy", "Fitness", "Pets"];
 
-console.log(newBank);
+videos.push("Clouds");
+
+videos.forEach((video) => {
+  console.log(video);
+});
