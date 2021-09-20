@@ -33,3 +33,4 @@ items.sort((item1, item2) => {
   return item1 > item2 ? 1 : -1;
 });
 console.log(items);
+console.log([...ratings, 5, 55, 88]);
