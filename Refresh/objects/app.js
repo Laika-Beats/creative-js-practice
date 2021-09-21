@@ -1,13 +1,6 @@
-const user = {
-  name: "developedbyed",
-  videos: ["react", "java", "c++", "butts"],
-  greet() {
-    console.log(`Hello there ${this.name}`);
-    const getVideos = () => {
-      console.log(`You currently have ${this.videos.length} videos`);
-    };
-    getVideos();
-  },
-};
+function Todo(name, completed) {
+  this.name = name;
+  this.completed = completed;
+}
 
-user.greet();
+const todo = new Todo("Buy Eggs", false);
