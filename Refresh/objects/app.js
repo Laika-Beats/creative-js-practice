@@ -1,26 +1,33 @@
-class Enemy {
-  constructor(life, name, level) {
-    this.life = life;
-    this.name = name;
-    this.level = level;
+class Animator {
+  constructor(selector) {
+    this.selector = document.querySelector(selector);
   }
-  getInfo() {
-    console.log(this.life, this.name, this.level);
+  fadeOut(time, toggle = false) {
+    if (toggle && this.selector.classList.contains("fadeOut-active")) {
+      this.selector.style.opacity = 1;
+      this.selector.classList.remove("fadeOut-active");
+    } else {
+      this.selector.style.transition = `all ${time}s ease`;
+      this.selector.style.opacity = 0;
+      this.selector.classList.add("fadeOut-active");
+    }
+  }
+  move(time, toggle = false, { x = 0, y = 0 }) {
+    if (toggle && this.selector.classList.contains("move-active")) {
+      this.selector.style.transform = "translate(0px, 0px)";
+      this.selector.classList.remove("move-active");
+    } else {
+      this.selector.style.transition = `all ${time}s ease`;
+      this.selector.style.transform = `translate(${x}px, ${y}px)`;
+      this.selector.classList.add("move-active");
+    }
   }
 }
 
-const turtle = new Enemy(25, "Squiddle", 10);
-const bug = new Enemy(15, "Buggy", 3);
+const intro = new Animator(".intro");
 
-class Bug extends Enemy {
-  constructor(life, name, level, legs, dmg) {
-    super(life, name, level);
-    this.legs = legs;
-    this.dmg = dmg;
-  }
-}
+const button = document.querySelector("button");
 
-const buddy = new Bug(100, "Buddy", 12, 6, 200);
-
-console.log(buddy);
-buddy.getInfo();
+button.addEventListener("click", () => {
+  intro.move(1, true, { x: 100, y: 100 });
+});
