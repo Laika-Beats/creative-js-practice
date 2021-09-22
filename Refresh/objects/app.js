@@ -1,22 +1,26 @@
-function Enemy(life, name, level) {
-  (this.life = life), (this.name = name), (this.level = level);
+class Enemy {
+  constructor(life, name, level) {
+    this.life = life;
+    this.name = name;
+    this.level = level;
+  }
+  getInfo() {
+    console.log(this.life, this.name, this.level);
+  }
 }
 
-Enemy.prototype.getInfo = function () {
-  console.log(this.life, this.name, this.level);
-};
-Enemy.prototype.attack = function () {
-  console.log(`${this.name} has attacked!`);
-};
-Enemy.prototype.block = function () {
-  console.log(`${this.name} has blocked!`);
-};
+const turtle = new Enemy(25, "Squiddle", 10);
+const bug = new Enemy(15, "Buggy", 3);
 
-function Dragon(life, name, level, color, spell) {
-  Enemy.call(this, life, name, level);
-  (this.color = color), (this.spell = spell);
+class Bug extends Enemy {
+  constructor(life, name, level, legs, dmg) {
+    super(life, name, level);
+    this.legs = legs;
+    this.dmg = dmg;
+  }
 }
 
-const newDragon = new Dragon(100, "Drogon", 25, "green", "fire");
+const buddy = new Bug(100, "Buddy", 12, 6, 200);
 
-console.log(newDragon);
+console.log(buddy);
+buddy.getInfo();
