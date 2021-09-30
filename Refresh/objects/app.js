@@ -1,13 +1,11 @@
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log("got the user");
-    resolve({ user: "Joshua" });
-    reject(new Error("User not logged in"));
-  }, 2000);
-});
+const quote = document.querySelector("h1");
+const btn = document.querySelector("button");
 
-promise
-  .then((user) => {
-    console.log(user);
-  })
-  .catch((error) => console.log(error));
+btn.addEventListener("click", () => {
+  fetch("https://api.adviceslip.com/advice")
+    .then((result) => result.json())
+    .then((data) => {
+      console.log(data);
+      quote.innerText = data.slip.advice;
+    });
+});
